@@ -33,15 +33,15 @@ async function run() {
             const result = await productCollection.find(query).toArray();
             console.log(result);
             res.send(result);
-        })
+        });
         app.get('/user', async (req, res) => {
             const query = {};
             const options = await userCollection.find(query).toArray();
             res.send(options);
-        })
+        });
         app.post("/user", async (req, res) => {
             const result = await userCollection.insertOne(req.body)
-        })
+        });
     }
     finally {
 
